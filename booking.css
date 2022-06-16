@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+* {
+    background-color: #FDFCF0;
+}
+
+.reserve-container {
+    display: flex;
+    justify-content: center;
+    height: 800px;
+}
+.reserve-container>div {
+    border: 1px solid #d1d0c7;
+}
+.reserve-title {
+    background-color: #333333;
+    text-align: center;
+    color: #e7e7e7;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 13px;
+}
+.movie-reserve {
+    width: 284px;
+}
+.theater-reserve {
+    width: 264px;
+}
+.date-reserve {
+    width: 91px;
+}
+.time-reserve {
+    width: 384px;
+}
+
+.sort-wrapper {
+    margin: 10px 6px 6px 10px;
+    display: flex;
+    font-size: 12px;
+    border-bottom: 1px solid #dddddd;
+}
+.sort-wrapper>div {
+    padding: 3px;
+}
+.sort-wrapper>div:hover {
+    border-bottom: 1px solid #222222;
+    font-weight: bold;
+}
+.sort-selected {
+    font-weight: bold;
+    border-bottom: 1px solid #222222;
+} 
+/* .sort-korean {
+    margin-left: 6px;
+} */
+
+.date-list {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 763px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
