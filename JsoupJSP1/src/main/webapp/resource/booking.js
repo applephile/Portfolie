@@ -244,10 +244,6 @@ function selectedTheater() {
 
     selectedWrap.classList.add("selected_wrapOn");
 }
-
-let a = document.querySelector(".movie-list").innerHTML;
-
-
 // view.addEventListener("click", function(){
 //     if(isOpen == false) {
 //         document.querySelector("#detail").style.display = "block";

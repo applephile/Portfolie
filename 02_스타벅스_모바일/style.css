@@ -1,0 +1,389 @@
+@charset "utf-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgb(44, 44, 44);
+}
+ul, ol{
+    list-style: none;
+}
+img{
+    vertical-align: top;
+    border: 0px;
+}
+
+a{
+    text-decoration: none;
+    /* color: rgb(44, 44, 44); */
+}
+#wrap{
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0px auto;
+}
+#header{
+    /* background-color: rgb(166, 219, 66); */
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+    align-items: center;
+}
+.logo{
+    margin-left: 10px;
+}
+.logo a{
+    /* a태그는 inline요소의 태그이기 때문에 width와 height를 가지려면 무조건
+    block태그로 바꿔줘야 한다 */
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-image: url(./img/logo.gif);
+    background-repeat: none;
+    background-size: 100% auto;
+    /* text-indent: 들여쓰기 */
+    text-indent: -999999px;
+}
+.h_btns{
+    display: flex;
+    margin-right: 4px;
+}
+.h_btns p{
+    margin-left: 5px;
+}
+.h_btns p a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-indent: -999999px;
+    /* 가로크기 세로크기 */
+    background-size: 28px auto;
+    background-repeat: no-repeat;
+    /* background-color: rgb(104, 74, 216); */
+    background-position: center;
+}
+.h_btns .open_search a{
+    background-image: url(./img/icon_sc.png);
+}
+.h_btns .open_menu a{
+    background-image: url(./img/icon_menu.jpg);
+}
+#container{
+    background-color: #ccc;
+}
+#container img{
+    width: 100%;
+    height: auto;
+}
+.main1{
+    margin-bottom: 15px;
+}
+
+.main2, .main3{
+    background-color: white;
+    padding: 25px 0px;
+}
+.main2{
+    margin-bottom: 15px;
+}
+.main2 h2, .main3 h2{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(148, 96, 29);
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+.main2 ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 5px;
+}
+.main2 li{
+    width: 50%;
+     /* padding이 아니라 margin으로 주게 되면 width 100% + margin이 되서
+     줄바꿈이 돼버린다*/
+    padding: 0px 5px;
+    /* 
+        box-sizing: border-box;
+        padding, border를 포함하여 너비값 계산
+     */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.main2 .item_photo{
+    margin-bottom: 10px;
+}
+.main2 .item_name_k{
+    font-size: 16px;
+    color: #222;
+    font-weight: 500;
+    margin-bottom: 5px;
+    /* white-space - text 줄바꿈 */
+    white-space: nowrap;
+    overflow: hidden;
+    /* text-overflow: ellipsis 말줄임표 */
+    text-overflow: ellipsis;
+}
+.main2 .item_name_e{
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.main3{
+    position: relative;
+}
+.main3 ul{
+    border-bottom: 1px dotted #666;
+    margin: 0px 10px;
+}
+.main3 li{
+    border-top: 1px dotted #666;
+}
+.main3 li a{
+    display: block;
+    font-size: 16px;
+    color: #666;
+    padding: 10px 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.main3 .more{
+    position: absolute;
+    top: 25px;
+    right: 4px;
+}
+.main3 .more a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(./img/more.png);
+    background-size: 18px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -99999px;
+}
+#footer
+{
+    background-color: #282828;
+    color: rgba(255, 255, 255, 0.7);
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+#footer>div{
+    margin-bottom: 20px;
+}
+#footer a{
+    color: rgba(255, 255, 255, 0.7);
+}
+.f_btn ul{
+    display: flex;
+    /* .f_btn li에서 padding을 좌우로 5px씩 줘서 border 사이는 10px이 
+    떨어지지만 양쪽 오른쪽, 왼쪽 제일 끝은 5px씩만 벌어지기 
+    때문에 ul에 padding을 마저 준다 */
+    padding: 0px 5px;
+}
+.f_btn li{
+    width: 33.33%;
+    /* padding이 아니라 margin으로 주게 되면 width 100% + margin이 되서
+     줄바꿈이 돼버린다*/
+    padding: 0px 5px;
+    box-sizing: border-box;
+    
+}
+.f_btn li a{
+    /* inline 요소인 a태그를 block으로 바꿔줌으로써 
+    width를 100% 다 사용하게 만들어준다 */
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 7px 0px;
+    /* border-radius: border의 모서리 둥근 정도 */
+    border-radius: 7px;
+    font-size: 12px;
+}
+.f_menu ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 10px;
+}
+.f_menu li{
+    margin-right: 15px;
+}
+#footer .f_menu .point a{
+    /* 아이디와 클래스를
+    동시에 같은 스타일을 적용하게 되면
+    아이디가 우선순위가 높은 관계로 아이디에 적용된 효과가 적용된다 */
+    color: rgb(30, 158, 62);
+}
+.f_info, .copyright{
+    margin: 0px 10px;
+    font-size: 12px;
+}
+.f_info span, .copyright span{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#side {
+
+    position: fixed;
+    top: 0px;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    overflow-y: scroll;
+}
+.s_login {
+    height: 65px;
+    background-color: #55443a;
+}
+.s_login a {
+    display: block;
+    color: #fff;
+    line-height: 65px;
+    padding-left: 45px;
+    font-size: 15px;
+    background-image: url(./img/login.png);
+    background-size: 22px auto;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+}
+.s_gnb .d1 {
+    border-bottom: 1px solid #ccc;
+}
+.s_gnb .d1 .m1 {
+    display: block;
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #55443a;
+    /* background-color: dodgerblue; */
+    background-image: url(./img/arr_d01.png);
+    background-repeat: no-repeat;
+    background-size: 15px auto;
+    background-position: right 15px center;
+}
+.s_gnb .d1 .m1.on{
+    background-image: url(./img/arr_u01.png);
+}
+.s_gnb .d1 .sub {
+    display: none;
+}
+.s_gnb .d1 .sub ul {
+    border-top: 1px solid #ccc;
+    padding: 10px 15px;
+}
+.s_gnb .d1 .sub a{
+    display: block;
+    font-size: 14px;
+    color: #444;
+    padding: 5px 0px;
+}
+
+.s_close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.s_close a {
+    display: block;
+    width: 65px;
+    height: 65px;
+    text-indent: -999999px;
+    background-image: url(./img/close2.png);
+    background-size: 23px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #side {
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0px auto;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+.s_login {
+    background-color: rgb(85, 68, 58);
+    height: 70px;
+    position: relative;
+}
+.s_login a {
+    color: #fff;
+    font-size: 25px;
+    position: absolute;
+    top: 23px;
+    left: 23px;
+}
+.s_gnb>ul>li {
+    height: 70px;
+    line-height: 70px;
+    font-size: 25px;
+    padding-left: 23px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+.s_gnb>ul>li>a {
+    color: rgb(85, 69, 56);
+}
+.s_gnb>ul>.d6>.m6 {
+    font-size: 23px;
+}
+.sub li {
+    display: none;
+} */
+
+

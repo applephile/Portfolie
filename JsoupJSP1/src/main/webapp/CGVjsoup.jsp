@@ -1,14 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.io.IOException" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="org.jsoup.Jsoup" %>
+<%@ page import="org.jsoup.nodes.Document" %>
+<%@ page import="org.jsoup.nodes.Element" %>
+<%@ page import="org.jsoup.select.Elements" %>
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>예매</title>
-        <link rel="stylesheet" href="./booking.css">
-    </head>
-    <body>
-        <div class="reserve-container">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./resource/booking.css">
+</head>
+<body>
+<div class="reserve-container">
             <div class="movie-reserve">
                 <div class="reserve-title">영화</div>
                 <div class="sort-wrapper">
@@ -16,6 +24,36 @@
                     <div class="sort-korean">가나다순</div>
                 </div>
                 <div class="movie-list"></div>
+               	<script>
+        			document.querySelector(".movie-list").innerHTML = "이순신";
+        		</script>
+                <%
+                	String url = "http://www.cgv.co.kr/movies/";
+	        		Document doc = null;
+	
+	        		try {
+	        			doc = Jsoup.connect(url).get();
+	        		} catch (IOException e) {
+	        			e.printStackTrace();
+	        		}
+	        		Elements element = doc.select("div.sect-movie-chart");    
+	
+	        		/* out.println("============================================================"); */
+	
+	        		Iterator<Element> ie1 = element.select("strong.rank").iterator();
+	        		Iterator<Element> ie2 = element.select("strong.title").iterator();
+	        		Iterator<Element> ie3 = element.select("strong.percent").iterator();
+	        		
+	        		while (ie2.hasNext()) {																	
+        				String a = (ie2.next().text()+"\t"+ie3.next().text() + "<br>");
+	        		}
+        		%>
+        	
+	        		        
+	        		
+        		<%
+	        		/* out.println("============================================================"); */
+                %>
             </div> <!-- .movie-reserve -->
             <div class="theater-reserve">
                 <div class="reserve-title">극장</div>
@@ -258,43 +296,42 @@
                     <div class="hallDate">
                         <div class="monthCommon">
                             <span class="year">2022</span>
-
                             <span class="six month">6</span>
-                            <a href="#" class="selectDay six sun"><span class="dayweek">일</span><span class="day">19</span> </a>
-                            <a href="#" class="selectDay six"><span class="dayweek">월</span><span class="day">20</span></a>
-                            <a href="#" class="selectDay six"><span class="dayweek">화</span><span class="day">21</span></a>
-                            <a href="#" class="selectDay six"><span class="dayweek">수</span><span class="day">22</span></a>
-                            <a href="#" class="selectDay six"><span class="dayweek">목</span><span class="day">23</span></a>
-                            <a href="#" class="selectDay six"><span class="dayweek">금</span><span class="day">24</span></a>
-                            <a href="#" class="selectDay six sat"><span class="dayweek">토</span><span class="day">25</span></a>
-                            <a href="#" class="selectDay six sun"><span class="dayweek">일</span><span class="day">26</span></a>
-                            <a href="#" class="selectDay six"><span class="dayweek">월</span><span class="day">27</span></a>
-                            <a href="#" class="selectDay six"><span class="dayweek">화</span><span class="day">28</span></a>
-                            <a href="#" class="selectDay six"><span class="dayweek">수</span><span class="day">29</span></a>
-                            <a href="#" class="selectDay six"><span class="dayweek">목</span><span class="day">30</span></a>
-
+                            <a href="#" class="selectDay sun"><span class="dayweek">일</span><span>19</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">월</span><span class="day">20</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">화</span><span class="day">21</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">수</span><span class="day">22</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">목</span><span class="day">23</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">금</span><span class="day">24</span> </a>
+                            <a href="#" class="selectDay sat"><span class="dayweek">토</span><span class="day">25</span> </a>
+                            <a href="#" class="selectDay sun"><span class="dayweek">일</span><span class="day">26</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">월</span><span class="day">27</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">화</span><span class="day">28</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">수</span><span class="day">29</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">목</span><span class="day">30</span> </a>
+                           
                             <span class="year">2022</span>
-
                             <span class="seven month">7</span>
-                            <a href="#" class="selectDay seven"><span class="dayweek">금</span><span class="day">1</span> </a>
-                            <a href="#" class="selectDay seven sat"><span class="dayweek">토</span><span class="day">2</span> </a>
-                            <a href="#" class="selectDay seven sun"><span class="dayweek">일</span><span class="day">3</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">월</span><span class="day">4</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">화</span><span class="day">5</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">수</span><span class="day">6</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">목</span><span class="day">7</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">금</span><span class="day">8</span> </a>
-                            <a href="#" class="selectDay seven sat"><span class="dayweek">토</span><span class="day">9</span> </a>
-                            <a href="#" class="selectDay seven sun"><span class="dayweek">일</span><span class="day">10</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">월</span><span class="day">11</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">화</span><span class="day">12</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">수</span><span class="day">13</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">목</span><span class="day">14</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">금</span><span class="day">15</span> </a>
-                            <a href="#" class="selectDay seven sat"><span class="dayweek">토</span><span class="day">16</span> </a>
-                            <a href="#" class="selectDay seven sun"><span class="dayweek">일</span><span class="day">17</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">월</span><span class="day">18</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">화</span><span class="day">19</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">금</span><span>1</span> </a>
+                            <a href="#" class="selectDay sat"><span class="dayweek">토</span><span>2</span> </a>
+                            <a href="#" class="selectDay sun"><span class="dayweek">일</span><span>3</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">월</span><span>4</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">화</span><span>5</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">수</span><span>6</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">목</span><span>7</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">금</span><span>8</span> </a>
+                            <a href="#" class="selectDay sat"><span class="dayweek">토</span><span>9</span> </a>
+                            <a href="#" class="selectDay sun"><span class="dayweek">일</span><span>10</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">월</span><span>11</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">화</span><span>12</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">수</span><span>13</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">목</span><span>14</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">금</span><span>15</span> </a>
+                            <a href="#" class="selectDay sat"><span class="dayweek">토</span><span>16</span> </a>
+                            <a href="#" class="selectDay sun"><span class="dayweek">일</span><span>17</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">월</span><span>18</span> </a>
+                            <a href="#" class="selectDay"><span class="dayweek">화</span><span>19</span> </a>
+                            
                         </div>
                     </div> <!-- .hallDate -->
                 </div> <!-- .date-list -->
@@ -325,22 +362,8 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script>    
-
-            // $('.hall-theater .localButton').click(function() {
-            //     let d = $(this).siblings();
-
-            //     $(this).addClass('theaterOn');
-            //     $(this).removeClass('theaterOff');
-
-            //    $(this).siblings.click(function() {
-            //     $(this).removeClass('theaterOn');
-            //     $(this).addClass('theaterOff');
-            //    })
-            // })            
-
             $('.theaterCommon .buttonCommon').click(function() {
                 let d = $(this).siblings();
-
                 if($(this).css('backgroundColor', '#444444')) {
                     $(this).attr('id', 'theaterButtonOn');
                     d.removeAttr('id', 'theaterButtonOn');
@@ -351,7 +374,6 @@
                     d.attr('id', 'theaterButtonOn');
                 }
             })  
-
             $(".hallDate .selectDay").click(function() {
                 let d = $(this).siblings();
                 
@@ -365,7 +387,6 @@
                     d.addClass('dateButtonOn');
                 }
             })
-            
             $('.theaterCommon .buttonCommon').click(function() {
                 $(".selected_wrap").css('display', 'block');
                 $('.select_theater').css('display', 'none');
@@ -377,13 +398,19 @@
                 $(".selected_wrap").css('display', 'block');
                 $('.select_theater').css('display', 'none');
                 
-                if($(this).hasClass('six') === true)
-                    $(".date_text").text("2022. 6. " + $(this).children('.day').text() + " " + $(this).children('.dayweek').text());
-                else if($(this).hasClass('seven') === true)
-                    $(".date_text").text("2022. 7. " + $(this).children('.day').text() + " " + $(this).children('.dayweek').text());
-                
+                $(".date_text").text($(this).text());
             })
+            
+            // let a = document.querySelector(".date_text").innerHTML;
+            // alert(a);
+            // $('.hall-theater .localButton').click(function() {
+               
+            //     $(this).addClass('theaterOn');
+            //     $(this).removeClass('theaterOff');
+            
+            //     $(this).siblings().addClass('theaterOff');
+            // })
             </script>
-        <script src="./booking.js"></script>
-    </body>
+<script src="./resobooking.js"></script>
+</body>
 </html>

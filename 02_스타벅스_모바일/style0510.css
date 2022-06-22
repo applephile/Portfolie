@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgb(44, 44, 44);
+}
+ul {
+    list-style: none;
+}
+img{
+    vertical-align: top;
+    border: 0px;
+}
+a{
+    text-decoration: none;
+}
+#warp {
+    background-color: #aaa;
+}
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+}
+.logo {
+
+}
+.logo a{
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-image: url(./img/logo.gif);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    text-indent: -999999px;
+}
+

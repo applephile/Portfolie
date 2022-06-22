@@ -1,0 +1,331 @@
+@charset "utf-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgb(44, 44, 44);
+}
+ul, ol{
+    list-style: none;
+}
+img{
+    vertical-align: top;
+    border: 0px;
+}
+
+a{
+    text-decoration: none;
+    /* color: rgb(44, 44, 44); */
+}
+
+
+
+#wrap{
+    /* width를 설정하지 않아도 div태그는 브라우저 전체를 영역으로 잡지만
+    모바일용 브라우저에서는 100%로 설정하지 않을 경우 브라우저가 깨질 수 있다 */
+    width: 100%;
+    /* 
+        최소너비값 1200px이라는 것은
+
+        브라우저의 너비값이 1200px을 초과할 때
+        .wrap의 너비값 = 브라우저 너비값
+
+        브라우저의 너비값이 1200px 이하일 때
+        .wrap의 너비값 = 1200px
+     */
+    min-width: 1240px;
+}
+#header{
+    /* background-color: yellowgreen; */
+    height: 90px;
+    border-bottom: 1px solid #808080;
+}
+.headerIn{
+    width: 1200px;
+    height: 90px;
+    /* background-color: pink; */
+    /* margin: auto로 설정하기 위해서는 width가 필수로 있어야 한다 */
+    margin: 0px auto;
+    position: relative;
+}
+.logo{
+    padding-top: 20px;
+    /* 
+        margin-top: 20px; 
+        logo는 headerIn의 첫 번째 자식이기 때문에 margin-top을 사용할 수 없다
+        첫 번째 자식태그의  margin-top과 마지막 자식의 margin-bottom은
+        부모 태그 영역 바깥쪽으로 인식되기 때문.
+    */
+}
+.gnb{
+    position: absolute;
+    top: 50px;
+    right: 70px;
+}
+.gnb ul{
+    display: flex;
+}
+.gnb li{
+    margin-left: 70px;
+}
+.gnb li a{
+    color: rgb(22, 22, 22);
+    font-size: 17px;
+}
+.btn-sc{
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+.util{
+    position: absolute;
+    top: 10px;
+    right: 0px;
+}
+.util ul{
+    display: flex;
+}
+.util li{
+    margin-left: 15px;
+}
+.util li a{
+    color: rgb(112, 112, 112);
+}
+.util li a:hover{
+    color: black;
+}
+
+.main_slide{
+    /* background-color: yellowgreen; */
+    position: relative;
+    /* ms_img가 position을 가지면서 main_slide의 높이가 사라지게 되서 
+    다음 작업을 할 때 결과물을 원하는 곳에 만들 수 없기 때문에 height를 넣어준다 */
+    height: 600px;
+    /* .main_slide 영역 밖의 내용이 보이지 않도록 설정 */
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.ms_img{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -960px;
+}
+
+/* 
+    .ms_img의 이미지 너비값이 안전사이즈(1200px)보다 넓음.
+
+    그래서 강제로 가운데 배치하기 위해서 position: absolute를 활용함
+
+    .main_slide의 자식인 .ms_img가 absolute처리가 되면
+        세로 높이값이 0이 되므로 .ms_img의 높이값만큼 .main_slide의
+        높이값만큼을 강제로 설정함
+    
+    안전사이즈(1200px)보다 큰 이미지 때문에 아래쪽에 스크롤이 생기므로
+        이를 없애기 위해서 .main_slide에 overflow: hidden을 설정함
+    
+    안전사이즈(1200px)보다 브라우저의 크기가 작아질 경우
+        .ms_img의 이미지가 잘려서 표시되므로
+        전체 영역의 최소 너비값을 고정함
+        ->최소한의 크기로 이미지가 보여야 하는 영역 설정
+*/
+
+.ms_btnL{
+    position: absolute;
+    /* top : (600px(이미지높이값) - 64(화살표크기)) / 2 = 268  */
+    top: 268px;
+    left: 50%;
+    margin-left: -600px;
+}
+.ms_btnR{
+    position: absolute;
+    top: 268px;
+    right: 50%;
+    margin-right: -600px;
+}
+
+.brand{
+    margin-bottom: 60px;
+}
+
+.brandIn{
+    width: 1200px;
+    margin: 0px auto;
+}
+.brandIn h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+.brandIn .brand_list{
+    display: flex;
+    justify-content: space-between;
+}
+.brand_list .brL{
+    width: 230px;    
+    border: 1px solid rgb(150, 150, 150);
+}
+.brand_list .brR{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 955px;
+
+}
+.brand_list .brR li{
+    border: 1px solid rgb(150, 150, 150);
+}
+
+.event{
+    background-color: #eee;
+    padding: 60px 0px;
+    margin-bottom: 60px;
+}
+.eventIn{
+    width: 1200px;
+    margin: 0px auto;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+.ev_Title{
+    width: 270px;
+}
+.ev_Title .line{
+    background-color: #444;
+    width: 50px;
+    height: 2px;
+    margin-bottom: 10px;
+}
+.ev_Title .text{
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 25px;
+}
+.ev_Title h2{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+/* .eventIn .ev_Title p{
+    margin-bottom: 30px;
+} */
+.ev_List{
+    width: 930px;
+}
+.ev_List ul{
+    /* width: 930px; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.eventIn .ev_Btn{
+    width: 53px;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.ev_Btn p{
+    margin-right: 10px;
+}
+
+.show{
+    width: 1200px;
+    margin: 0px auto;
+    margin-bottom: 90px;
+}
+.show h2{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+.show ul{
+    display: flex;
+    justify-content: space-around;
+}
+#footer{
+    margin-bottom: 80px;
+}
+.family{
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    /* line-height: 70px; */
+    align-items: center;
+    margin-bottom: 30px;
+}
+.family h3{
+    font-weight: 400;
+    margin-right: 50px;
+    color: rgb(150, 150, 150);
+}
+.family ul{
+    display: flex;
+}
+.family li{
+    margin-right: 50px;
+}
+.family li a{
+    font-size: 16px;
+    color: rgb(150, 150, 150);
+}
+.family .point a{
+    color: rgb(26, 26, 26);
+    /* font-weight: bold; */
+}
+
+.footerIn{
+    width: 1200px;
+    margin: 0px auto;
+    display: flex;
+}
+.f_logo{
+    margin-right: 30px;
+}
+.f_menu{
+    margin-bottom: 20px;
+}
+.f_menu ul{
+    display: flex;
+}
+.f_menu li{
+    margin-right: 25px;
+}
+.f_menu li a{
+    color: rgb(150, 150, 150);
+}
+.f_menu .point a{
+    color: rgb(26, 26, 26);
+}
+
+.f_box .f_info{
+    color: rgb(150, 150, 150);
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.f_info .bar{
+    display: inline-block;
+    background-color: rgb(150, 150, 150);
+    width: 1px;
+    height: 10px;
+    margin: 0px 2px;
+}
+.f_box .copyright{
+    color: rgb(150, 150, 150);
+}
+
+

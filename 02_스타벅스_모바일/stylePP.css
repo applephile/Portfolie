@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgb(44, 44, 44);
+}
+ul, ol{
+    list-style: none;
+}
+img{
+    vertical-align: top;
+    border: 0px;
+}
+
+a{
+    text-decoration: none;
+    /* color: rgb(44, 44, 44); */
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+    /* align-items: center로 따로 여백으로 요소들을 움직이지 않고
+    중앙에 가져다둔다. */
+    align-items: center;
+}
+.logo{
+    margin-left: 10px;
+}
+.logo a{
+    /* a태그는 inline요소의 태그이기 때문에 width와 height를 가지려면 무조건
+    block태그로 바꿔줘야 한다 */
+    display: block;
+    background-image: url(./img/logo.gif);
+    width: 45px;
+    height: 45px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+     /* text-indent: 들여쓰기 */
+    text-indent: -99999px;
+}
+.h_btns{
+    display: flex;
+    /* h_btns p a에서 width를 40px주고 background-size를 28px를 준 뒤
+    background-position으로 center로 보내줌으로써 각 요소의
+    양쪽 여백이 6px씩 있기 때문에 margin-rigth 4px을 줘서 
+    logo 왼쪽과 같이 10px을 맞춘다 */
+    margin-right: 4px;
+}
+.h_btns p{
+    margin-left: 5px;
+}
+.h_btns p a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    /* 가로크기 세로크기 */
+    background-size: 28px auto;
+     /* text-indent: 들여쓰기 */
+    text-indent: -99999px;
+    background-position: center;
+}
+.h_btns .open_search a{
+    background-image: url(./img/icon_sc.png);
+}
+.h_btns .open_menu a{
+    background-image: url(./img/icon_menu.jpg);
+}
+#container{
+    background-color: #ccc;
+}
+#container img{
+    width: 100%;
+    height: auto;
+}
+.main1{
+    margin-bottom: 15px;
+}
+.main2{
+    background-color: white;
+    padding: 25px 0px;
+}
+.main2 h2{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(148, 96, 29);
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+.main2 ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 5px;
+}
+.main2 ul li{
+    width: 50%;
+     /* padding이 아니라 margin으로 주게 되면 width 100% + margin이 되서
+     줄바꿈이 돼버린다*/
+    padding: 0px 5px;
+     /* 
+        box-sizing: border-box;
+        padding, border를 포함하여 너비값 계산
+     */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.main2 .item_photo{
+    margin-bottom: 10px;
+}
+.main2 .item_name_k{
+    color: #222;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.main2 .item_name_e{
+    color: #222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
